@@ -1,0 +1,66 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model IEnumerable<GameApp.Models.Game>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Gry</h1>
+
+<p>
+    @if (SignInManager.IsSignedIn(User))
+    {
+        <a asp-action="Create">Dodaj nową gre</a>
+    }
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YearOfProduction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CommentText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hours)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="gametitle">
+               <a asp-action="Details" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.Title)</a>
+            </td>
+                <td class="gametype">
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+                <td class="gameyear">
+                @Html.DisplayFor(modelItem => item.YearOfProduction)
+            </td>
+                <td class="gamecomment">
+                @Html.DisplayFor(modelItem => item.CommentText)
+            </td>
+                <td class="gamehours">
+                @Html.DisplayFor(modelItem => item.Hours)
+            </td>
+                <td class="gamegrade">
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

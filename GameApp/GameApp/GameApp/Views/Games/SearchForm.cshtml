@@ -1,0 +1,36 @@
+﻿<h1>Szukaj gry</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SearchResultsTitle">
+            <h4 class="search-header">Szukaj po tytule</h4>
+            <div class="form-group">
+                <label for="SearchPhrase" class="control-label"></label>
+                <input name="SearchPhrase" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Szukaj" class="btn btn-primary" />
+            </div>
+        </form>
+        <form asp-action="SearchResultsType">
+            <h4 class="search-header">Szukaj po typie</h4>
+            <div class="form-group">
+                <label for="SearchPhrase" class="control-label"></label>
+                <input name="SearchPhrase" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Szukaj" class="btn btn-primary" />
+            </div>
+        </form>
+        <form asp-action="SearchResultsGrade">
+            <h4 class="search-header">Szukaj po ocenie</h4>
+            <div class="form-group">
+                <label for="SearchPhrase" class="control-label"></label>
+                <input name="SearchPhrase" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Szukaj" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
